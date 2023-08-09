@@ -1,0 +1,3 @@
+#ignoring specific file
+.vscode/
+framework/ignore_test
