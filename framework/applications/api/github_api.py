@@ -13,3 +13,12 @@ class GitHubApi():
         #     raise HTTPError
         
         return r.json()
+    
+    def get_repos(self, repos_search_param: str):
+        r = requests.get(
+            f"{self.base_url}/search/repositories", 
+            params={'q': repos_search_param}
+            )
+        r.raise_for_status()
+
+        return r.json()
