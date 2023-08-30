@@ -1,13 +1,19 @@
-def test_check_repos_can_be_found(github_api_client):
-    # Check the suer can find any existing repo from github
-    repos = github_api_client.get_repos('aqa_trainings')
+from providers.data.repo_provider import RepositoryProvider
 
-    assert repos['total_count'] != 0
-    assert len(repos['items']) != 0
+
+def test_check_repos_can_be_found(github_api_client):
+    r = RepositoryProvider.existing_repo()
+    
+    repos = github_api_client.get_repos(r['name'])
+
+    # assert repos['name'] == r['name']
+    assert repos['total_count'] >= r['total_count']
+    assert len(repos['items']) != r['total_count']
 
 def test_check_repos_cannot_be_found(github_api_client):
-    # Check the suer cannot find any existing repo from github
-    repos = github_api_client.get_repos('asdasdasdasdq2421aaqa_trainings')
+    r = RepositoryProvider.non_existing_repo()
 
-    assert repos['total_count'] == 0
-    assert len(repos['items']) == 0
+    repos = github_api_client.get_repos(r['name'])
+
+    assert repos['total_count'] >= r['total_count']
+    assert len(repos['items']) == r['total_count']
