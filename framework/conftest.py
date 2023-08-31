@@ -1,5 +1,6 @@
 from config.config import Config
 from applications.api.github_api import GitHubApi
+from applications.api.github_api import PupLicapis
 import pytest
 
 @pytest.fixture(scope='session')
@@ -9,3 +10,11 @@ def github_api_client():
     yield github_api_client
 
     print("END-UP TEST")
+
+@pytest.fixture(scope='session')
+def service_api_client():
+    service_api_client = PupLicapis(Config.bese_url_2)
+
+    yield service_api_client
+
+    print(("END-UP TEST 2"))

@@ -8,9 +8,6 @@ class GitHubApi():
     def get_user(self, username):
         r = requests.get(f"{self.base_url}/users/{username}")
         r.raise_for_status()
-        # above does following code
-        # if r.status_code != 200:
-        #     raise HTTPError
         
         return r.json()
     
@@ -22,3 +19,14 @@ class GitHubApi():
         r.raise_for_status()
 
         return r.json()
+    
+
+class PupLicapis():
+    
+    def __init__(self, base_url) -> None:
+        self.base_url = base_url
+
+    def get_service(self, path):
+        l = requests.get(f"{self.base_url}{path}")
+
+        return l.json()
