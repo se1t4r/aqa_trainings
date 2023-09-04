@@ -1,5 +1,12 @@
+import os
+
 class Config:
-    base_url = 'https://api.github.com'
+    base_url_api = os.environ.get("BASE_URL_API", 'https://api.github.com') 
+    base_url_ui = os.environ.get("BASE_URL_UI", 'https://github.com')
+
+    login_path = '/login'
+
+    
 
     bese_url_2 = 'https://api.publicapis.org'
 
@@ -10,5 +17,3 @@ class Config:
     path_categories = '/categories'
 
     path_health = '/health'
-
-#comment for testing pull request

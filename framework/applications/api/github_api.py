@@ -30,6 +30,3 @@ class PupLicapis():
         l = requests.get(f"{self.base_url}{path}")
 
         return l.json()
-    
-
-#comment for testing pull request
