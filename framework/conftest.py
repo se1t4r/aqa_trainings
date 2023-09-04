@@ -24,7 +24,7 @@ def github_ui_client():
     driver = webdriver.Chrome(
         service = Service(r"/home/liza/Desktop/Serik/aqa/framework/chromedriver")
     )
-    github_ui_client = GitHubUI(Config.base_url_ui, Config.login_path, driver)
+    github_ui_client = GitHubUI(Config.base_url_ui, driver)
 
     yield github_ui_client
 
