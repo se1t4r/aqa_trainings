@@ -10,3 +10,5 @@ class Config:
     path_categories = '/categories'
 
     path_health = '/health'
+
+#comment for testing pull request
