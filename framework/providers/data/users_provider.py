@@ -6,15 +6,17 @@ class UserProvider:
     @staticmethod
     def fake_user():
         return {
-            'login': 'some_name',
-            'id': 777777777777777777777777777
+            'login': 'se1t4r',
+            'id': 777777777777777777777777777,
+            'password': 'askfjas'
         }
 
     @staticmethod
     def existing_user():
         return {
             'login': 'se1t4r',
-            'id': 102989181
+            'id': 102989181,
+            'password': '72Cbmwp85Kqb'
         }
     
     @staticmethod
