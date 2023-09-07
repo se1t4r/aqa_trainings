@@ -1,5 +1,4 @@
 class DatabaseProvider:
-    
     def __init__(self, connect_str) -> None:
         self.connect_str = connect_str
 
