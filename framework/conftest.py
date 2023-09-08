@@ -1,9 +1,8 @@
 import pytest
-from selenium import webdriver
-from applications.api.github_api import GitHubApi
+from applications.api.github_api import GitHubApi, PupLicapis
 from applications.ui.github_ui import GitHubUI
-from applications.api.github_api import PupLicapis
 from config.config import Config
+from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 

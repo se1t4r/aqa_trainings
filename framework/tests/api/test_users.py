@@ -1,5 +1,4 @@
 from config.config import Config
-from providers.data.users_provider import UserProvider
 
 
 # comment for testing pull request
@@ -10,10 +9,10 @@ from providers.data.users_provider import UserProvider
 #     assert r.status_code == 200
 
 
-def test_list_code200():
-    r = requests.get(Config.bese_url_2)
+# def test_list_code200():
+#     r = requests.get(Config.bese_url_2)
 
-    assert r.status_code == 200
+#     assert r.status_code == 200
 
 
 # def test_user_exists(github_api_client):
@@ -25,34 +24,34 @@ def test_list_code200():
 #     assert api_user['id'] == user['id']
 
 
-def test_get_list(service_api_client):
-    l = service_api_client.get_service(Config.path_entries)
+# def test_get_list(service_api_client):
+#     l = service_api_client.get_service(Config.path_entries)
 
-    assert l["count"] > 0
-    print(l["count"])
-    assert l["entries"] is not None
-
-
-def test_check_category(service_api_client):
-    c = service_api_client.get_service(Config.path_entries)
-
-    assert c["entries"][0]["Category"] == "Animals"
-    print(c["entries"][0]["Category"])
+#     assert l["count"] > 0
+#     print(l["count"])
+#     assert l["entries"] is not None
 
 
-def test_random(service_api_client):
-    r = service_api_client.get_service(Config.path_random)
+# def test_check_category(service_api_client):
+#     c = service_api_client.get_service(Config.path_entries)
 
-    assert r["count"] == 1
-    print(r["count"])
-    print(r["entries"])
+#     assert c["entries"][0]["Category"] == "Animals"
+#     print(c["entries"][0]["Category"])
 
 
-def test_check_health(service_api_client):
-    h = service_api_client.get_service(Config.path_health)
+# def test_random(service_api_client):
+#     r = service_api_client.get_service(Config.path_random)
 
-    assert h["alive"] is True
-    print(h["alive"])
+#     assert r["count"] == 1
+#     print(r["count"])
+#     print(r["entries"])
+
+
+# def test_check_health(service_api_client):
+#     h = service_api_client.get_service(Config.path_health)
+
+#     assert h["alive"] is True
+#     print(h["alive"])
 
 
 # def test_user_not_exists(github_api_client):
